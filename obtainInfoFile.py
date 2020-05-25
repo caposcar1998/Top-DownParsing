@@ -5,41 +5,38 @@ def openFile(fileName):
     nonTerminalSymbols = None
     terminalSymbols = None
     startingSymbol = None
-    listProductions = None
+    dictionaryProds =  {
+        "S": [],
+        }
     with open("files/test1.txt") as fp:
         line = fp.readline()
         cnt = 0
         while line:
             if(cnt == 0):
                 nonTerminalSymbols = createTerminalSymbols(line)
-                listProductions = createDictionariesToFill(nonTerminalSymbols)
+                createDictionariesToFill(nonTerminalSymbols,dictionaryProds)
             if(cnt == 1):
                 terminalSymbols = createNoTerminalSymbols(line)
             if(cnt == 2):
                 startingSymbol = line
             if(cnt >= 3):
-                createListProduction(nonTerminalSymbols, line, listProductions)
+                createListProduction(nonTerminalSymbols, line, dictionaryProds)
             line = fp.readline()
             cnt += 1
     fp.close()
 
-    return nonTerminalSymbols, terminalSymbols, startingSymbol, listProductions
+    return nonTerminalSymbols, terminalSymbols, startingSymbol, dictionaryProds
 
-def createDictionariesToFill(nonTerminalSymbols):
-    listOfProductions = []
+def createDictionariesToFill(nonTerminalSymbols,dictionaryProds):
     for letter in nonTerminalSymbols:
-        prod = {
-        "name": letter,
-        "prodStates": []
-        }
-        listOfProductions.append(prod)
-    return listOfProductions
+        dictionaryProds[letter] = []
 
-def createListProduction(nonTerminalSymbols,line, listProductions):
-    for letter in listProductions:
-        if(letter.get("name") == line[0]): 
-            letter["prodStates"].append(line.split(">",1)[1].strip())
-        
+
+
+def createListProduction(nonTerminalSymbols,line, dictionaryProds):
+    print("line", line[0])
+    dictionaryProds[line[0]].append(line.split(">",1)[1].strip())
+    
         
 
 def createTerminalSymbols(line):
