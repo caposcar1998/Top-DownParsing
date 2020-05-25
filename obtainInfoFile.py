@@ -34,7 +34,6 @@ def createDictionariesToFill(nonTerminalSymbols,dictionaryProds):
 
 
 def createListProduction(nonTerminalSymbols,line, dictionaryProds):
-    print("line", line[0])
     dictionaryProds[line[0]].append(line.split(">",1)[1].strip())
     
         
