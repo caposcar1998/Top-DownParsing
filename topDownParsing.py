@@ -6,9 +6,14 @@ def createParsingTree(enterString, maxSizeTree, nonTerminalSymbols,startingSymbo
     
 
     if (bool(res) ):
+        print("maxSize", maxSizeTree)
+        print("coutner", counter)
         print("String entrada ",enterString)
         print("Datoa modificar", res[0])
         print("Producciones para res: ", listProductions.get(res[0]))
+
+        #Aqui definir que prodeccion se va a utilizar
+
         #Segundo arreglo cambiar por valor que se parezca al sttring orignila
         print("Valor que se va a cambiar", listProductions.get(res[0])[1])
         stringChanged = enterString.replace(res[0],listProductions.get(res[0])[1],1 )
