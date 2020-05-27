@@ -21,7 +21,7 @@ def main ():
     startingSymbol = openFile(fileSelected)[2]
     listProductions =openFile(fileSelected)[3]
 
-    createParsingTree(enterString, maxSizeTree, nonTerminalSymbols, terminalSymbols, startingSymbol, listProductions)
+    createParsingTree(enterString, maxSizeTree, nonTerminalSymbols, startingSymbol, listProductions)
 
 if __name__ == "__main__":
     main()
