@@ -8,7 +8,7 @@ def openFile(fileName):
     dictionaryProds =  {
         "S": [],
         }
-    with open("files/test1.txt") as fp:
+    with open(fileName) as fp:
         line = fp.readline()
         cnt = 0
         while line:
