@@ -3,23 +3,16 @@ def createParsingTree(enterString, maxSizeTree, nonTerminalSymbols,startingSymbo
     
     res = [ele for ele in nonTerminalSymbols if(ele in enterString)]
 
-    
 
-    if (bool(res) ):
-        print("maxSize", maxSizeTree)
-        print("coutner", counter)
-        print("String entrada ",enterString)
-        print("Datoa modificar", res[0])
-        print("Producciones para res: ", listProductions.get(res[0]))
+    if (bool(res) and counter < int(maxSizeTree) ):
 
-        #Aqui definir que prodeccion se va a utilizar
+        for prod in  listProductions.get(res[0]):
+            print("For everyProd")
 
-        #Segundo arreglo cambiar por valor que se parezca al sttring orignila
-        print("Valor que se va a cambiar", listProductions.get(res[0])[1])
-        stringChanged = enterString.replace(res[0],listProductions.get(res[0])[1],1 )
-        print("Cambio string", stringChanged)
-        counter +=1
+            stringChanged = enterString.replace(res[0],prod,1 )
+            print("Cambio string", stringChanged)
+            counter +=1
         
-        createParsingTree(stringChanged, maxSizeTree, nonTerminalSymbols,startingSymbol, listProductions, counter)
+            createParsingTree(stringChanged, maxSizeTree, nonTerminalSymbols,startingSymbol, listProductions, counter)
     else:
         print("Your final string is: ",enterString)
