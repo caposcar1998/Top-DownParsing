@@ -24,7 +24,10 @@ def getNodesRec(enterString, prodString, maxSizeTree, nonTerminalSymbols, listPr
         res = [ele for ele in nonTerminalSymbols if(ele in prodString)]
         for prod in listProductions.get(res[0]):
             newString = prodString.replace(res[0], prod, 1)
-            print(printLines(counter) + newString)
+            if (newString == enterString):
+                print(printLines(counter) + newString+ " final")
+            else:
+                print(printLines(counter) + newString)
             getNodesRec(enterString, newString, maxSizeTree, nonTerminalSymbols, listProductions, counter)
 
 
