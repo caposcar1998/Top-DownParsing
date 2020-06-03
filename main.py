@@ -11,7 +11,7 @@ def main ():
     enterString = input()
     print("Enter max depth of the tree")
     maxSizeTree = input()
-    print("Select file from files, write full name with exttension and add files/, like ( files/test1.txt )")
+    print("Select file from files")
     onlyfiles = [f for f in listdir("files") if isfile(join("files", f))]
     print(onlyfiles)
     fileSelected = input()
