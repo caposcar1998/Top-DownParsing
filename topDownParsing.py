@@ -1,9 +1,8 @@
 def createParsingTree(enterString, maxSizeTree, nonTerminalSymbols,startingSymbol, listProductions, counter = 0):
     
-    print(listProductions)
-    print(maxSizeTree)
-    print(nonTerminalSymbols)
-    print(startingSymbol)
+    print("Productions",listProductions)
+    print("Max Size tree",maxSizeTree)
+    print("Starting symbol",startingSymbol)
 
     res = [ele for ele in nonTerminalSymbols if(ele in startingSymbol)]
     print(res[0])
