@@ -3,7 +3,7 @@
 #Proffesor Gilberto Huesca
 #Students:
     #Oscar Contreras Palacios A01655772
-    #Mauricio Acosta
+    #Mauricio Acosta Hernández A01339392
 #Tod down parsing tree 
 #Part2 project
 
